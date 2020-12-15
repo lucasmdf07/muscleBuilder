@@ -38,7 +38,7 @@ const TabBallImage = styled.Image`
 export default (props) => {
     return (
         <TabBarArea>
-            {props.item.map(item=>(
+            {props.items.map(item=>(
                     <TabBarItem key={item.route}>
                         {item.type == 'regular' && 
                             <TabRegular>
@@ -55,7 +55,6 @@ export default (props) => {
                         }
                     </TabBarItem>
                 ))}
-
         </TabBarArea>
     );
 }
