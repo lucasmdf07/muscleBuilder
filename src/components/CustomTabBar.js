@@ -41,7 +41,7 @@ export default (props) => {
             {props.items.map(item=>(
                     <TabBarItem key={item.route}>
                         {item.type == 'regular' && 
-                            <TabRegular>
+                            <TabRegular underlayColor="transparent" onPress={()=>props.navigation.navigate(item.route)}>
                                 <>
                                     <TabImage source={item.icon} />
                                     <Text>{item.text} </Text>
@@ -49,7 +49,7 @@ export default (props) => {
                             </TabRegular>
                         }
                         {item.type == 'big' &&
-                            <TabBall>
+                            <TabBall underlayColor="#00FF00" onPress={()=>props.navigation.navigate(item.route)}>
                                 <TabBallImage source={item.icon} />
                             </TabBall>
                         }

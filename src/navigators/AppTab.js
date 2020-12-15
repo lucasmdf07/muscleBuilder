@@ -21,7 +21,7 @@ export default createBottomTabNavigator({
             items={[
                 {
                     type:'regular',
-                    text:'Início',
+                    text:'Home',
                     icon:require('../assets/home.png'),
                     route:'HomeStack'
                 },
@@ -32,7 +32,7 @@ export default createBottomTabNavigator({
                 },
                 {
                     type:'regular',
-                    text:'Meus Treinos',
+                    text:'My Trainings',
                     icon:require('../assets/myworkouts.png'),
                     route:'MyWorkoutsStack'
                 }
