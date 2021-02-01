@@ -1,0 +1,37 @@
+react-native init ...
+
+adb devices
+
+react-native run-android
+
+npm install react-navigation react-native-gesture-handler react-native-reanimated react-native-screens --save
+
+npm install react-navigation-stack react-navigation-tabs --save
+
+npm install react-native-swipe-list-view --save
+
+npm install redux react-redux redux-persist --save
+
+npm install styled-components uuid --save
+
+npm install @react-native-community/async-storage --save
+
+R5CN80KMYAT     device
+List of devices attached
+R5CN80KMYAT     device
+
+List of devices attached
+emulator-5554   device  
+
+
+ract native
+react navigation
+stacks e tabs
+redux
+redux persist manter os dados mesmo que feche o aplicativo
+styled component
+
+
+git add. 
+git commit -m "changes'
+git push -u origin master

@@ -11,8 +11,6 @@ export default createBottomTabNavigator({
     HomeStack,
     // WorkoutStack,
     // MyWorkoutsStack
-    // TmpScreen,
-    // TmpScreen
 
 }, {
     tabBarComponent:(props)=>(
