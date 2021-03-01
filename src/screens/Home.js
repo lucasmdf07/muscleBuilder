@@ -43,6 +43,7 @@ const Page = (props) => {
     let today = new Date();
 
     const [selectedMonth, setSelectedMonth] = useState(today.getMonth());
+    const [selectedDay, setSelectedDay] = useState(today.getDate());
 
 
 
@@ -50,12 +51,19 @@ const Page = (props) => {
         <Container>
             <HomeMonthScroll
                 selectedMonth = {selectedMonth}
-                setSelectedMonth={setSelectedMonth}
-
-            
+                setSelectedMonth={setSelectedMonth}      
             />
-            <HomeDaysScroll />
+            <HomeDaysScroll
+                selectedMonth={selectedMonth}
+                selectedDay={selectedDay}
+                setSelectedDay={setSelectedDay}
+
+                dailyProgress={props.dailyProgress}
+                workoutDays={props.workoutDays}
+
+            />
             <HomeDaysStatus />
+            <LegendText>Month: {selectedMonth}</LegendText>
 
             <Legend>
                 <LegendText>Color Code:</LegendText>
@@ -126,6 +134,8 @@ const ConfigButton = () => {
 const mapStateToProps = (state) => {
     return {
     //   myWorkouts:state.userReducer.myWorkouts
+        dailyProgress:state.userReducer.dailyProgress,
+        workoutDays:state.userReducer.workoutDays
     };
 };
 
