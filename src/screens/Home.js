@@ -11,12 +11,15 @@ import HomeDaysStatus from '../components/HomeDaysStatus';
 
 const Container = styled.SafeAreaView`
     align-items:center;
+    background-color:#FFFFFF;
+    flex:1;
 `;
 
 const Legend = styled.View`
     width:90%;
     align-items:flex-start;
     margin-top:30px;
+    margin-bottom:30px;
 `;
 
 const LegendText = styled.Text`
@@ -57,13 +60,24 @@ const Page = (props) => {
                 selectedMonth={selectedMonth}
                 selectedDay={selectedDay}
                 setSelectedDay={setSelectedDay}
-
                 dailyProgress={props.dailyProgress}
                 workoutDays={props.workoutDays}
 
             />
-            <HomeDaysStatus />
+            <HomeDaysStatus
+                selectedMonth={selectedMonth}
+                selectedDay={selectedDay}
+                setSelectedDay={setSelectedDay}
+                dailyProgress={props.dailyProgress}
+                workoutDays={props.workoutDays}
+
+                addProgress={props.addProgress}
+                delProgress={props.delProgress}
+                goToWorkout={()=>props.navigation.navigate('WorkoutStack')}
+
+            />
             <LegendText>Month: {selectedMonth}</LegendText>
+            <LegendText>Day: {selectedDay}</LegendText>
 
             <Legend>
                 <LegendText>Color Code:</LegendText>
@@ -101,6 +115,7 @@ const ConfigButtonArea = styled.TouchableHighlight`
     height:30px;
     justify-content:center;
     align-items:center;
+    background-color:#FFFFFF;
 `;
 
 const ConfigButtonImage = styled.Image`
@@ -113,7 +128,7 @@ const ConfigButton = () => {
         navigation.navigate('HomeConfig');
     }
     return (
-        <ConfigButtonArea onPress={btnAction}>
+        <ConfigButtonArea onPress={btnAction} underlayColor="transparent">
             <ConfigButtonImage source={require('../assets/config.png')} />
         </ConfigButtonArea>
     );
@@ -125,11 +140,8 @@ const ConfigButton = () => {
         headerRightContainerStyle:{
             marginRight:10
         }
-        
-
     }
 }
-
 
 const mapStateToProps = (state) => {
     return {
@@ -141,13 +153,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        // setName:(name)=> dispatch({type:'SET_NAME', payload:{name}}),
-        // setWorkoutDays:(workoutDays)=>dispatch({type:'SET_WORKOUTDAYS',payload:{workoutDays}})
-        // setLevel:(level)=>dispatch({type:'SET_LEVEL',payload:{level}})
-        // setName:(name)=> setName(name, dispatch),
-        // reset:()=>reset(dispatch)
-        // addWorkout:(workout)=>dispatch({type:'ADD_WORKOUT',payload:{workout}}),
-        // delWorkout:(workout)=>dispatch({type:'DEL_WORKOUT',payload:{workout}})
+        addProgress:(date)=>dispatch({type:'ADD_PROGRESS', payload:{date}}),
+        delProgress:(date)=>dispatch({type:'DEL_PROGRESS', payload:{date}}),
+
     }
 }
   

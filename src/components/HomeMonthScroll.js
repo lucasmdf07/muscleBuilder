@@ -16,7 +16,7 @@ const MonthButton = styled.TouchableHighlight`
 const MonthItem = styled.View`
     width:90%;
     height:30px;
-    background-color:#A9A9A9;
+    background-color:#EEE;
     border-radius:15px;
     justify-content:center;
     align-items:center;
@@ -55,7 +55,7 @@ export default (props) => {
         setTimeout(()=>{
             scrollToMonth(selectedMonth);
         }, 10);
-    },[props.setSelectedMonth]);
+    },[props.selectedMonth]);
 
     return (
         <MonthScroll

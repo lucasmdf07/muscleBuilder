@@ -5,6 +5,7 @@ import styled from 'styled-components/native';
 const TabBarArea = styled.SafeAreaView`
     flex-direction:row;
     background-color:#EEE;
+    height: 60px;
 `;
 const TabBarItem = styled.View`
     flex:1;

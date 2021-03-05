@@ -4,12 +4,14 @@ const initialState = {
     workoutDays:[], // 0-6 (Semana comeca no domingo)
     myWorkouts:[],
     lastWorkout:'', // ID
-    dailyProgress:['2020-09-13', '2020-09-12']
+    dailyProgress:['2021-02-02', '2021-02-01', '2021-02-26']
 };
 
 export default (state = initialState, action) => {
 
     let myWorkouts = [...state.myWorkouts];
+    let dailyProgress = [...state.dailyProgress];
+
 
     switch(action.type) {
         case 'SET_NAME':
@@ -30,6 +32,16 @@ export default (state = initialState, action) => {
         case 'DEL_WORKOUT':
             myWorkouts = myWorkouts.filter(i=>i.id!=action.payload.workout.id);
             return {...state, myWorkouts};
+            break;
+        case 'ADD_PROGRESS':
+            if(!dailyProgress.includes(action.payload.date)) {
+                dailyProgress.push(action.payload.date);
+            }
+            return {...state, dailyProgress};
+            break;
+            case 'DEL_PROGRESS':
+            dailyProgress = dailyProgress.filter(i=>i!=action.payload.date);
+            return {...state, dailyProgress};
             break;
 
     }
