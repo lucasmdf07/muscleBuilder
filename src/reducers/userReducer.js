@@ -52,7 +52,7 @@ export default (state = initialState, action) => {
             break;
         case 'RESET':
             return initialState;
-            break
+            break;
 
 
     }

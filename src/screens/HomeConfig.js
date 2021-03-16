@@ -79,7 +79,7 @@ const Page = (props) => {
 
     const resetAction = () => {
         props.reset();
-        const resetAction = StackAction.reset({
+        const resetAction = StackActions.reset({
             index:0,
             actions:[
                 NavigationActions.navigate({routeName:'StarterStack'})
