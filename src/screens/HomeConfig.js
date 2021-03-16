@@ -1,6 +1,6 @@
 import React, { useState }  from 'react';
 // import { Text } from 'react-native';
-// import { StackActions, NavigationActions } from 'react-navigation';
+import { StackActions, NavigationActions } from 'react-navigation';
 import styled from 'styled-components/native';
 import { connect } from 'react-redux';
 import HomeMonthScroll from '../components/HomeMonthScroll';
@@ -57,6 +57,7 @@ const LevelItem = styled.TouchableHighlight`
 `;
 
 const LevelItemText = styled.Text``;
+const ResetButton = styled.Button``;
 
 
 const Page = (props) => {
@@ -76,6 +77,16 @@ const Page = (props) => {
         props.setWorkoutDays(newWorkoutDays);
     }
 
+    const resetAction = () => {
+        props.reset();
+        const resetAction = StackAction.reset({
+            index:0,
+            actions:[
+                NavigationActions.navigate({routeName:'StarterStack'})
+            ]
+        });
+        props.navigation.dispatch(resetAction);
+    }
 
     return (
         <Container>
@@ -117,6 +128,8 @@ const Page = (props) => {
                     <LevelItemText>Advanced</LevelItemText>
                 </LevelItem>
             </ListArea>
+            <Label>Would you like to reset everything?</Label>
+            <ResetButton title="Reset All Data" onPress={resetAction} />
 
         </Container>
     );
@@ -148,6 +161,7 @@ const mapDispatchToProps = (dispatch) => {
         setName:(name)=>dispatch({type:'SET_NAME', payload:{name}}),
         setWorkoutDays:(workoutDays)=>dispatch({type:'SET_WORKOUTDAYS', payload:{workoutDays}}),
         setLevel:(level)=>dispatch({type:'SET_LEVEL', payload:{level}}),
+        reset:()=>dispatch({type:'RESET'})
 
     }
 }

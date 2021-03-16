@@ -29,6 +29,13 @@ export default (state = initialState, action) => {
             }
             return {...state, myWorkouts};
             break;
+        case 'EDIT_WORKOUT':
+            let index = myWorkouts.findIndex(i=>i.id == action.payload.workout.id);
+            if(index > -1) {
+                myWorkouts[index] = action.payload.workout;
+            }
+            return {...state, myWorkouts};
+            break;
         case 'DEL_WORKOUT':
             myWorkouts = myWorkouts.filter(i=>i.id!=action.payload.workout.id);
             return {...state, myWorkouts};
@@ -39,10 +46,14 @@ export default (state = initialState, action) => {
             }
             return {...state, dailyProgress};
             break;
-            case 'DEL_PROGRESS':
+        case 'DEL_PROGRESS':
             dailyProgress = dailyProgress.filter(i=>i!=action.payload.date);
             return {...state, dailyProgress};
             break;
+        case 'RESET':
+            return initialState;
+            break
+
 
     }
     
