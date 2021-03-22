@@ -10,7 +10,8 @@ import CustomModal from '../components/CustomModal';
 
 const Container = styled.SafeAreaView`
     flex:1;
-    margin:20px;
+    background-color:#FFF;
+    padding:20px;
 `;
 const NameInput = styled.TextInput`
     border:1px solid #CCC;
@@ -248,7 +249,7 @@ const Page = (props) => {
             />
             <ExercisesArea>
                 <DefaultButton bgcolor="#4AC34E" onPress={addExercise} underlayColor="transparent">
-                    <ButtonText>Adicionar Exercício</ButtonText>
+                    <ButtonText>Add Exercise</ButtonText>
                 </DefaultButton>
 
                 <ExercisesList
