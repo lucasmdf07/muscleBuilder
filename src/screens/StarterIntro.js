@@ -56,7 +56,7 @@ const ButtonText = styled.Text`
  }
 
 Page.navigationOptions = {
-     header:null
+    headerShown:false
 };
 
 export default Page;

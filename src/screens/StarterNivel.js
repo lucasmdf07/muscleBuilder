@@ -102,7 +102,7 @@ Page.navigationOptions = ({navigation}) => {
  
     return {
         title:'',
-        headerRight:<NextButton title="Next" onPress={nextAction} />,
+        headerRight: () => <NextButton title="Next" onPress={nextAction} />,
 
     //     headerRight:<NextButton navigation={navigation} />,
         headerRightContainerStyle:{

@@ -7,7 +7,7 @@ const Container = styled.View``;
 export default () => {
     return (
         <Container>
-            <Text>pagina Temporaria</Text>
+            <Text>Temporary page</Text>
         </Container>
     );
 }

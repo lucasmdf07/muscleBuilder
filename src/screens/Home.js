@@ -136,7 +136,7 @@ const ConfigButton = () => {
  
     return {
         title:'Your daily Progress',
-        headerRight:<ConfigButton />,
+        headerRight: () => <ConfigButton />,
         headerRightContainerStyle:{
             marginRight:10
         }

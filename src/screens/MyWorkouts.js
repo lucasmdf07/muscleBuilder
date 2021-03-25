@@ -73,7 +73,7 @@ Page.navigationOptions = ({navigation}) => {
     
     return {
         title:'My Trainings',
-        headerRight:<AddWorkoutButton onPress={btnAction} underlayColor="transparent" />,
+        headerRight: () => <AddWorkoutButton onPress={btnAction} underlayColor="transparent" />,
         headerRightContainerStyle:{
             marginRight:10
         }

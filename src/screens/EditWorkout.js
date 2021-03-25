@@ -313,7 +313,7 @@ Page.navigationOptions = ({navigation}) => {
 
     return {
         title:isEdit?'Edit Training':'Add training',
-        headerRight:<SaveWorkoutButton />,
+        headerRight: () => <SaveWorkoutButton />,
         headerRightContainerStyle:{
             marginRight:10
         }

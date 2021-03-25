@@ -3,13 +3,13 @@ import styled from 'styled-components/native';
 import DefaultButton from './DefaultButton';
 
 const BalloonTriangle = styled.View`
-    width: 0;
-    height: 0;
+    width: 0px;
+    height: 0px;
     borderLeftColor:transparent;
-    borderLeftWidth: 15;
-    borderBottomWidth: 15;
+    borderLeftWidth: 15px;
+    borderBottomWidth: 15px;
     borderBottomColor: #EDEDED;
-    borderRightWidth: 15;
+    borderRightWidth: 15px;
     borderRightColor:transparent
 `;
 const BalloonArea = styled.View`

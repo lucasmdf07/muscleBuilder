@@ -15,24 +15,46 @@ import HomeDaysStatus from '../components/HomeDaysStatus';
 const Container = styled.SafeAreaView`
     flex:1;
     background-color:#FFFFFF;
+    padding:20px;
 `;
 
 const WorkoutList = styled.FlatList`
     flex:1;
-    padding:20px;
+`;
+
+const Title = styled.Text`
+    margin-bottom:10px;
+    padding:5px;
 `;
 
 
 const Page = (props) => {
 
+    let lastWorkout = false;
+
+    if(props.lastWorkout) {
+        lastWorkout = props.myWorkouts.find(i=>i.id == props.lastWorkout);
+    }
+
+    const goWorkout = (workout) =>{
+        props.navigation.navigate('WorkoutCheckList', {workout});
+    }
 
     return (
         <Container>
+            {lastWorkout &&
+                <>
+                    <Title>Your last training was:</Title>
+                    <Workout data={lastWorkout} />
+                </>
+            }
+            <Title>Choose your training for today:</Title>
             <WorkoutList
                 data={props.myWorkouts}
                 renderItem={({item})=>
                     <Workout
                         data={item}
+                        goAction={()=>goWorkout(item)}
 
                     />
                 }
@@ -46,23 +68,25 @@ const Page = (props) => {
 Page.navigationOptions = ({navigation}) => {
 
     const handleBackAction = () => {
-        navigation.dispatch(StackActions.reset({
-            index:0,
-            action:[
-                NavigationActions.navigate({routeName:'AppTab'})
-            ]
-        }));
-    }
+        const resetAction = StackActions.reset({
+        index: 0,
+        actions: [NavigationActions.navigate({ routeName: 'AppTab' })],
+                });
+        
+        navigation.dispatch(resetAction);
+            }
     
     return {
         title:'Select your training',
-        headerLeft:<HeaderBackButton onPress={handleBackAction} />
+        // headerLeft:<HeaderBackButton onPress={handleBackAction} />
+        headerLeft: () => <HeaderBackButton onPress={handleBackAction} />
         }
     
 }
 
 const mapStateToProps = (state) => {
     return {
+        lastWorkout:state.userReducer.lastWorkout,
         myWorkouts:state.userReducer.myWorkouts
     };
 };
