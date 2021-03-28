@@ -9,7 +9,7 @@ const Container = styled.SafeAreaView`
 
     align-items:center;
     background-color:#FFF;
-    margin:50px 30px;
+    padding:50px 30px;
 `;
 
 const HeaderText = styled.Text`
@@ -62,25 +62,25 @@ const toggleDay = (d) => {
             <HeaderText>How many <BoldText>days</BoldText> do you plan on working out?</HeaderText>
 
             <DaysArea>
-                <DefaultButton bgcolor={props.workoutDays.includes(1)?'#A5E8BC':false} onPress={()=>toggleDay(1)} width={100} style={{marginBottom:20}} underlayColor="#CCC">
+                <DefaultButton bgcolor={props.workoutDays.includes(1)?'#A5E8BC':false} onPress={()=>toggleDay(1)}  width="100px" style={{marginBottom:20}} underlayColor="#CCC">
                     <Text>Monday</Text>
                 </DefaultButton>
-                <DefaultButton bgcolor={props.workoutDays.includes(2)?'#A5E8BC':false}  onPress={()=>toggleDay(2)}  width={100} style={{marginBottom:20}} underlayColor="#CCC">
+                <DefaultButton bgcolor={props.workoutDays.includes(2)?'#A5E8BC':false} onPress={()=>toggleDay(2)}  width="100px" style={{marginBottom:20}} underlayColor="#CCC">
                     <Text>Tuesday</Text>
                 </DefaultButton>
-                <DefaultButton bgcolor={props.workoutDays.includes(3)?'#A5E8BC':false}  onPress={()=>toggleDay(3)}  width={120} style={{marginBottom:20}} underlayColor="#CCC">
+                <DefaultButton bgcolor={props.workoutDays.includes(3)?'#A5E8BC':false} onPress={()=>toggleDay(3)}  width="120px" style={{marginBottom:20}} underlayColor="#CCC">
                     <Text>Wednesday</Text>
                 </DefaultButton>
-                <DefaultButton bgcolor={props.workoutDays.includes(4)?'#A5E8BC':false}  onPress={()=>toggleDay(4)}  width={100} style={{marginBottom:20}} underlayColor="#CCC">
+                <DefaultButton bgcolor={props.workoutDays.includes(4)?'#A5E8BC':false} onPress={()=>toggleDay(4)}  width="100px" style={{marginBottom:20}} underlayColor="#CCC">
                     <Text>Thursday</Text>
                 </DefaultButton>
-                <DefaultButton bgcolor={props.workoutDays.includes(5)?'#A5E8BC':false}  onPress={()=>toggleDay(5)}  width={100} style={{marginBottom:20}} underlayColor="#CCC">
+                <DefaultButton bgcolor={props.workoutDays.includes(5)?'#A5E8BC':false} onPress={()=>toggleDay(5)}  width="100px" style={{marginBottom:20}} underlayColor="#CCC">
                     <Text>Friday</Text>
                 </DefaultButton>
-                <DefaultButton bgcolor={props.workoutDays.includes(6)?'#A5E8BC':false}  onPress={()=>toggleDay(6)}  width={100} style={{marginBottom:20}} underlayColor="#CCC">
+                <DefaultButton bgcolor={props.workoutDays.includes(6)?'#A5E8BC':false} onPress={()=>toggleDay(6)}  width="100px" style={{marginBottom:20}} underlayColor="#CCC">
                     <Text>Saturday</Text>
                 </DefaultButton>
-                <DefaultButton bgcolor={props.workoutDays.includes(0)?'#A5E8BC':false}  onPress={()=>toggleDay(0)}  width={100} style={{marginBottom:20}} underlayColor="#CCC">
+                <DefaultButton bgcolor={props.workoutDays.includes(0)?'#A5E8BC':false} onPress={()=>toggleDay(0)}  width="100px" style={{marginBottom:20}} underlayColor="#CCC">
                     <Text>Sunday</Text>
                 </DefaultButton>
             </DaysArea>

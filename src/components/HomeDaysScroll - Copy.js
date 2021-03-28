@@ -9,7 +9,7 @@ const DaysScroll = styled.ScrollView`
 `;
 
 const DayButton = styled.TouchableHighlight`
-    width:${props=>props.width};
+    width:${props=>props.width}px;
     justify-content:center;
     align-items:center;
 `;

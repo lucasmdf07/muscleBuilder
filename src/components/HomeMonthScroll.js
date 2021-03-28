@@ -9,7 +9,7 @@ const MonthScroll = styled.ScrollView`
 `;
 
 const MonthButton = styled.TouchableHighlight`
-    width:${props=>props.width};
+    width:${props=>props.width}px;
     justify-content:center;
     align-items:center;
 `;

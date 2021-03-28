@@ -9,7 +9,7 @@ const Container = styled.SafeAreaView`
 
     align-items:center;
     background-color:#FFF;
-    margin:50px 30px;
+    padding:50px 30px;
 `;
 
 const HeaderText = styled.Text`
@@ -43,22 +43,22 @@ const Page = (props) => {
     let funnyPhrase = '';
     switch(props.workoutDays.length){
         case 1:
-            funnyPhrase = 'One day a week is good start off!';
+            funnyPhrase = 'One day a week is good to start off!';
             break;
         case 2:
             funnyPhrase = 'Two days a week is a great way to get better';
             break;
         case 3:
-            funnyPhrase = 'Three days a week is usually a good goal';
+            funnyPhrase = 'Three days a week is a great goal';
             break;
         case 4:
             funnyPhrase = 'Four days a week is outstanding';
             break;
         case 5:
-            funnyPhrase = 'Five days a week means you are not joking';
+            funnyPhrase = "Five days a week means you're not joking";
             break;
         case 6:
-            funnyPhrase = 'Six days a week means you are very serious about it';
+            funnyPhrase = "Six days a week means you're very serious about it";
             break;
         case 7:
             funnyPhrase = 'Seven days a week is incredible';
@@ -94,7 +94,7 @@ Page.navigationOptions = ({navigation}) => {
 
     const nextAction = () => {
         if(!navigation.state.params || !navigation.state.params.level){
-            alert('voce precisa escolher uma opcao')
+            alert('You need to select at least on option')
             return
         }
         navigation.navigate('StarterRecommendations');

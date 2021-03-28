@@ -9,7 +9,7 @@ const Container = styled.SafeAreaView`
 
     align-items:center;
     background-color:#FFF;
-    margin:0 30px;
+    padding:0 30px;
 `;
 
 const HeaderText = styled.Text`

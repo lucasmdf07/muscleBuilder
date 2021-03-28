@@ -8,7 +8,7 @@ const Container = styled.SafeAreaView`
     justify-content:center;
     align-items:center;
     background-color:#FFF;
-    margin:0 30px;
+    padding:0 30px;
 `;
 
 const WelcomeText = styled.Text`
