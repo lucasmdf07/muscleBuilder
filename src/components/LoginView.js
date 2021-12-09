@@ -12,17 +12,14 @@ import {useDispatch, useSelector} from 'react-redux';
 import {login} from '../reducers/user-actions';
 
 const LoginView = (props) => {
+  const dispatch = useDispatch();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const dispatch = useDispatch();
   const [errorMessage, setErrorMessage] = useState(undefined);
 
   const loading = useSelector((state) => state.userReducer.loading);
   const error = useSelector((state) => state.userReducer.error);
   const success = useSelector((state) => state.userReducer.succcess);
-
-  console.log('ERROR', error);
-  console.log('SUCCESS', success);
 
   const handleLogin = () => {
     dispatch(login(email, password));
@@ -31,17 +28,11 @@ const LoginView = (props) => {
       setErrorMessage('Unable to login, please verify inputs and try again');
       return;
     }
-
-    setErrorMessage('');
-    console.log('PROCEED');
-    () => props.navigation.navigate('PreLoad');
   };
 
-  //   if (!loading && success) {
-  //     setErrorMessage('');
-  //     console.log('PROCEED');
-  //     props.navigation.navigate('PreLoad');
-  //   }
+  if (success) {
+    setErrorMessage('');
+  }
 
   return (
     <View style={styles.container}>

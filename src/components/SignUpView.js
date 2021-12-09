@@ -25,8 +25,6 @@ const SignUpView = (props) => {
   const error = useSelector((state) => state.userReducer.error);
   const success = useSelector((state) => state.userReducer.succcess);
 
-  //   props.navigation.navigate('PreLoad');
-
   const handleSignUp = () => {
     if (password !== confirmPassword) {
       setErrorMessage('Passwords do not match');
