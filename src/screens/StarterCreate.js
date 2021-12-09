@@ -103,7 +103,7 @@ const Page = (props) => {
     // .signInWithEmailAndPassword('jane.doe@example.com', 'SuperSecretPassword!')
     .signInWithEmailAndPassword(email, password)
     .then(() => {
-      console.log('User account created & signed in!');
+      console.log('User signed in!');
     })
     .catch(error => {
       if (error.code === 'auth/email-already-in-use') {
@@ -122,7 +122,7 @@ const Page = (props) => {
     // .signInWithEmailAndPassword('jane.doe@example.com', 'SuperSecretPassword!')
     .createUserWithEmailAndPassword(email, password)
     .then(() => {
-      console.log('User account created & signed in!');
+      console.log('User account created');
     })
     .catch(error => {
       if (error.code === 'auth/email-already-in-use') {

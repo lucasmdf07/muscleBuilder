@@ -239,7 +239,7 @@ const Page = (props) => {
                 </ModalExtra>
 
                 <DefaultButton bgcolor="#4AC34E" onPress={modalSave} underlayColor="transparent">
-                    <ButtonText>Salvar</ButtonText>
+                    <ButtonText>Save</ButtonText>
                 </DefaultButton>
             </CustomModal>
             <NameInput

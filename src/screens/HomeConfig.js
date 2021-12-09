@@ -7,6 +7,7 @@ import HomeMonthScroll from '../components/HomeMonthScroll';
 import HomeDaysScroll from '../components/HomeDaysScroll';
 import HomeDaysStatus from '../components/HomeDaysStatus';
 // import DefaultButton from '../components/DefaultButton';
+import auth from '@react-native-firebase/auth';
 
 
 const Container = styled.SafeAreaView`
@@ -77,6 +78,14 @@ const Page = (props) => {
         props.setWorkoutDays(newWorkoutDays);
     }
 
+    
+    function logoff(){
+        auth()
+        .signOut()
+        .then(() => console.log('User signed out!'));
+    }
+
+
     const resetAction = () => {
         props.reset();
         const resetAction = StackActions.reset({
@@ -86,6 +95,17 @@ const Page = (props) => {
             ]
         });
         props.navigation.dispatch(resetAction);
+    }
+    const resetActionAndSignOut = () => {
+        props.reset();
+        const resetAction = StackActions.reset({
+            index:0,
+            actions:[
+                NavigationActions.navigate({routeName:'StarterStack'})
+            ]
+        });
+        props.navigation.dispatch(resetAction);
+        logoff()
     }
 
     return (
@@ -130,6 +150,8 @@ const Page = (props) => {
             </ListArea>
             <Label>Would you like to reset everything?</Label>
             <ResetButton title="Reset All Data" onPress={resetAction} />
+            <Label>Sign out of your account</Label>
+            <ResetButton title="Sign out" onPress={resetActionAndSignOut} />
 
         </Container>
     );
