@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "144952872585",
+    "project_id": "musclebuilderauthentication",
+    "storage_bucket": "musclebuilderauthentication.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:144952872585:android:c104cc1b4626b2cdf20058",
+        "android_client_info": {
+          "package_name": "com.musclebuilder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "144952872585-30qdldpcft2tk0trlqkbovbjeopkp8qe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFMO1U7v7YbYCDEjlhAzGKjeOK8D_dGvo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "144952872585-30qdldpcft2tk0trlqkbovbjeopkp8qe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
