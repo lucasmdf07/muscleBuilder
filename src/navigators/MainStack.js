@@ -8,12 +8,12 @@ import AppTab from './AppTab';
 const MainStack = createStackNavigator({
     Preload,
     StarterStack,
-    AppTab
+    AppTab,
 }, {
     initialRouteName:'Preload',
     defaultNavigationOptions:{
-        headerShown:false
-    }
+        headerShown:false,
+    },
 });
 
 export default createAppContainer(MainStack);

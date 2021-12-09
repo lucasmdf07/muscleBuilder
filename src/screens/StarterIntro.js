@@ -37,7 +37,7 @@ const ButtonText = styled.Text`
  const Page = (props) => {
 
     const start = () => {
-        props.navigation.navigate('StarterName');
+        props.navigation.navigate('LoginPage');
     };
 
      return (

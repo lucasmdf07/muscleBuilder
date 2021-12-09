@@ -23,7 +23,8 @@ const Preload = (props) => {
         props.navigation.dispatch(StackActions.reset({
             index:0,
             actions:[
-                NavigationActions.navigate({routeName:'AppTab'})
+                // NavigationActions.navigate({routeName:'AppTab'})
+                NavigationActions.navigate({routeName:'StarterStack'})
             ]
         }));
     }

@@ -92,7 +92,7 @@ Page.navigationOptions = ({navigation}) => {
 
     const nextAction = () => {
         if(!navigation.state.params || !navigation.state.params.workoutDays.length){
-            alert('voce precisa treinar pelo menos um dia')
+            alert('You need to select at least one day')
             return
         }
         navigation.navigate('StarterNivel');
