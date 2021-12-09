@@ -11,6 +11,7 @@ export const signUp = (email, password, name) => {
         name,
       });
 
+      dispatch({type: 'RESET'});
       dispatch({type: SIGN_UP});
 
       dispatch({type: SUCCESS, show: true});
