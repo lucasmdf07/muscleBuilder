@@ -33,6 +33,8 @@ const SignUpView = (props) => {
 
     dispatch(signUp(email, password, name));
 
+    console.log(error);
+
     if (error) {
       setErrorMessage('Unable to sign up, please verify inputs and try again');
       return;
