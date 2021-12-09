@@ -3,7 +3,7 @@ import { Text } from 'react-native';
 import styled from 'styled-components/native';
 import DefaultButton from '../components/DefaultButton';
 import auth from '@react-native-firebase/auth';
-// import { GoogleSignin, GoogleSigninButton } from '@react-native-google-signin/google-signin';
+import { GoogleSignin, GoogleSigninButton } from '@react-native-google-signin/google-signin';
 
 // import {
 //     GoogleSignin,
@@ -161,7 +161,7 @@ const NextButton = styled.Button``;
   async function onGoogleButtonPress() {
 
     GoogleSignin.configure({
-      webClientId: '1057360946439-sdob7mlectn2ofppptslvvpcdv7c6d05.apps.googleusercontent.com',
+      webClientId: '144952872585-30qdldpcft2tk0trlqkbovbjeopkp8qe.apps.googleusercontent.com',
       scopes: ["profile","email"],
     });
     
@@ -186,16 +186,25 @@ const NextButton = styled.Button``;
         }}
         title="Google Sign-In"
         onPress={() =>
-          onGoogleButtonPress().then(() =>
+          onGoogleButtonPress()
+          .then(() => {
             console.log("Signed in with Google!")
+            props.navigation.navigate('StarterName');
+          }
           )
         }
+        
       />
     );
+    
+
   }
     
     const start = () => {
         signInFirebase();
+        props.navigation.navigate('StarterName');
+    };
+    const start2 = () => {
         props.navigation.navigate('StarterName');
     };
     const create = () => {
@@ -232,7 +241,7 @@ const NextButton = styled.Button``;
                    <ButtonText>Create User</ButtonText>
                  </DefaultButton>
              </BeginConfigArea>
-             {/* <GoogleSignIn style={{ marginBottom: 16 }} /> */}
+             <GoogleSignIn style={{ marginBottom: 16 }} />
 
          </Container>
      );
