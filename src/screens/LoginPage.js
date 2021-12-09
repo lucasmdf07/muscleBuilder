@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Text } from 'react-native';
 import styled from 'styled-components/native';
 import DefaultButton from '../components/DefaultButton';
-// import auth from '@react-native-firebase/auth';
+import auth from '@react-native-firebase/auth';
 // import { GoogleSignin, GoogleSigninButton } from '@react-native-google-signin/google-signin';
 
 // import {
@@ -195,6 +195,7 @@ const NextButton = styled.Button``;
   }
     
     const start = () => {
+        signInFirebase();
         props.navigation.navigate('StarterName');
     };
     const create = () => {

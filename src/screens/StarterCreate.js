@@ -3,7 +3,7 @@ import { Text } from 'react-native';
 import styled from 'styled-components/native';
 import { connect } from 'react-redux';
 import DefaultButton from '../components/DefaultButton';
-// import auth from '@react-native-firebase/auth';
+import auth from '@react-native-firebase/auth';
 // import { GoogleSignin, GoogleSigninButton } from '@react-native-google-signin/google-signin';
 
 const Container = styled.SafeAreaView`
@@ -44,6 +44,7 @@ const ButtonText = styled.Text`
 const Page = (props) => {
 
     const login = () => {
+        createUser();
         props.navigation.navigate('LoginPage');
     };
 
